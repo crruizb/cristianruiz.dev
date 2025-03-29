@@ -1,11 +1,91 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
+import Layout from '@/layouts/Layout.astro';
+import "@/styles/global.css"
+import Link from '@/components/Link.astro';
+import GoLogo from "@/assets/go-seeklogo.svg";
+import KotlinLogo from "@/assets/kotlin-seeklogo.svg";
+import KtorLogo from "@/assets/ktor-seeklogo.svg";
+import JavaLogo from "@/assets/java-seeklogo.svg";
+import SpringLogo from "@/assets/spring-boot-seeklogo.svg";
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import HTMLLogo from "@/assets/html5-seeklogo.svg";
+import CSSLogo from "@/assets/css3-seeklogo.svg";
+import JSLogo from "@/assets/javascript-js-seeklogo.svg";
+import TSLogo from "@/assets/typescript-seeklogo.svg";
+import ReactLogo from "@/assets/react-seeklogo.svg";
+import AstroLogo from "@/assets/astro-icon-seeklogo.svg";
+
+import PostgresLogo from "@/assets/postgresql-seeklogo.svg";
+import MysqlLogo from "@/assets/mysql-seeklogo.svg";
+import MongoLogo from "@/assets/mongodb-seeklogo.svg";
+import RedisLogo from "@/assets/redis-seeklogo.svg";
+
+import TFLogo from "@/assets/terraform-seeklogo.svg";
+import K8sLogo from "@/assets/kubernetes-seeklogo.svg";
+import GHActionsLogo from "@/assets/github-actions-seeklogo.svg";
+import GCPLogo from "@/assets/google-cloud-platform-gcp-seeklogo.svg";
 ---
-
 <Layout>
-	<Welcome />
+	<main>
+		<section class="mb-20">
+			<h3 class="text-stone-500 dark:text-stone-100 text-2xl opacity-60">About me</h3>
+			<h1 class="bg-gradient-to-r from-primary to-accent inline-block text-transparent bg-clip-text font-bold text-6xl my-2 -ml-2">Cristian Ruiz</h1>
+			<h2 class="text-2xl text-black mb-2 dark:text-white">Backend Engineer</h2>
+			<p class="text-xl text-stone-600 dark:text-stone-300 leading-5">I build software to help companies increase their productivity</p>
+		</section>
+
+		<section class="mb-10 space-x-4">
+			<h3 class="text-stone-500 dark:text-stone-100 text-2xl opacity-60 mb-4">Find me on</h3>
+			<Link href="https://github.com/crruizb" name="GitHub"/>
+			<Link href="https://www.linkedin.com/in/cristian-ruiz-bonilla/" name="Linkedin"/>
+			<Link href="mailto:cristianruizbonilla@gmail.com" name="cristianruizbonilla@gmail.com"/>
+			<a></a>
+			<a></a>
+		</section>
+
+		<section class="mb-10">
+			<h3 class="text-stone-500 dark:text-stone-100 text-2xl opacity-60 mb-4">Now</h3>
+			<p class="text-xl">Working in the <Link href="https://mediamarktsaturn.com/" name="leading retailer in Europe" /> for consumer electronics</p>
+		</section>
+
+		<section class="mb-10">
+			<h3 class="text-stone-500 dark:text-stone-100 text-2xl opacity-60 mb-4">Before</h3>
+			<ul>
+				<p class="text-xl">Helping companies to innovate and solving challenges on an international <Link href="https://hexad.es/" name="IT consultancy" /></p>
+				<p class="text-xl">Optimizing and automating processes in a <Link href="https://effenmark.es/" name="energy company"/></p>
+			</ul>
+		</section>
+
+		<section class="mb-10">
+			<h3 class="text-stone-500 dark:text-stone-100 text-2xl opacity-60 mb-4">Projects</h3>
+			<a>Time tracker for freelancers (WIP)</a>
+			<a>Estetica Derma</a>
+		</section>
+
+		<section class="mb-10">
+			<h3 class="text-stone-500 dark:text-stone-100 text-2xl opacity-60 mb-4">Skills</h3>
+
+			<div class="grid grid-cols-6 grid-rows-5 gap-4">
+				<div><GoLogo width={48} height={48} /></div>
+				<div><KotlinLogo width={64} height={64} /></div>
+				<div><KtorLogo width={64} height={64} /></div>
+				<div><JavaLogo width={48} height={48} /></div>
+				<div><SpringLogo width={64} height={64} /></div>
+				<div class="row-start-2"><HTMLLogo width={64} height={64} /></div>
+				<div class="row-start-2"><CSSLogo width={64} height={64} /></div>
+				<div class="row-start-2"><JSLogo width={64} height={64} /></div>
+				<div class="row-start-2"><TSLogo width={64} height={64} /></div>
+				<div class="row-start-2"><ReactLogo width={64} height={64} /></div>
+				<div class="row-start-2"><AstroLogo width={64} height={64} /></div>
+				<div class="row-start-3"><PostgresLogo width={64} height={64} /></div>
+				<div class="row-start-3"><MysqlLogo width={64} height={64} /></div>
+				<div class="row-start-3"><MongoLogo width={64} height={64} /></div>
+				<div class="row-start-3"><RedisLogo width={64} height={64} /></div>
+				<div class="row-start-4"><TFLogo width={64} height={64} /></div>
+				<div class="row-start-4"><K8sLogo width={64} height={64} /></div>
+				<div class="row-start-4"><GHActionsLogo width={64} height={64} /></div>
+				<div class="row-start-4"><GCPLogo width={64} height={64} /></div>
+			</div>
+		</section>
+	</main>
 </Layout>
