@@ -1,8 +1,8 @@
 ---
 import ThemeIcon from "@/components/ThemeIcon.astro";
-import GithubIcon from "@/assets/icons8-github.svg"
-import LinkedinIcon from "@/assets/icons8-linkedin.svg"
-import GmailIcon from "@/assets/icons8-gmail.svg"
+import GithubIcon from "@/assets/icons/icons8-github.svg"
+import LinkedinIcon from "@/assets/icons/icons8-linkedin.svg"
+import GmailIcon from "@/assets/icons/icons8-gmail.svg"
 ---
 
 <!doctype html>
@@ -17,7 +17,7 @@ import GmailIcon from "@/assets/icons8-gmail.svg"
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
 	</head>
-	<body class="mx-auto p-8 max-w-4xl grid min-h-screen grid-rows-[auto_1fr_auto]">
+	<body class="mx-auto md:p-8 max-w-4xl min-h-screen grid grid-rows-[auto_1fr_auto]">
 		<header class="my-10 flex justify-end gap-4">
 			<GithubIcon width={32} height={32} />
 			<LinkedinIcon width={32} height={32} />
@@ -25,9 +25,9 @@ import GmailIcon from "@/assets/icons8-gmail.svg"
 			<ThemeIcon  />
 		</header>
 		<slot />
-		<hr class="h-px bg-accent border-0 mt-8">
-		<footer class="my-10 mx-auto">
-			<a href="cristianruiz.dev" class="flex gap-2">cristianruiz.dev 🚀 {new Date().getFullYear()}</a>
+		<hr class="h-px bg-gradient-to-r from-primary to-accent border-0 mt-24">
+		<footer class="mt-8 mx-auto flex justify-center">
+			<a href="cristianruiz.dev" class="flex gap-2 ">cristianruiz.dev 🚀 {new Date().getFullYear()}</a>
 		</footer>
 	</body>
 </html>

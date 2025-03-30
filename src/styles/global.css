@@ -4,6 +4,28 @@
   --default-font-family: "Inter", sans-serif;
   --color-primary: #206aff;
   --color-accent: #d97aff;
+
+  --animate-loop-scroll: "loopscroll 1s linear infinite";
+
+  @keyframes loopscroll {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-100%);
+    }
+  }
+
+  /* --animate-loop-scroll: loopscroll 1s ease-in-out infinite;
+  @keyframes loopscroll {
+    0%,
+    100% {
+      transform: rotate(-3deg);
+    }
+    50% {
+      transform: rotate(3deg);
+    }
+  } */
 }
 
 @custom-variant dark (&:where(.dark, .dark *));

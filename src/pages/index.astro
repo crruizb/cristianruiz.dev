@@ -2,103 +2,101 @@
 import Layout from '@/layouts/Layout.astro';
 import "@/styles/global.css"
 import Link from '@/components/Link.astro';
-import GoLogo from "@/assets/go-seeklogo.svg";
-import KotlinLogo from "@/assets/kotlin-seeklogo.svg";
-import KtorLogo from "@/assets/ktor-seeklogo.svg";
-import JavaLogo from "@/assets/java-seeklogo.svg";
-import SpringLogo from "@/assets/spring-boot-seeklogo.svg";
+import GoLogo from "@/assets/logos/go-seeklogo.svg";
+import KotlinLogo from "@/assets/logos/kotlin-seeklogo.svg";
+import KtorLogo from "@/assets/logos/ktor-icon-seeklogo.svg";
+import JavaLogo from "@/assets/logos/java-seeklogo.svg";
+import SpringLogo from "@/assets/logos/spring-seeklogo.svg";
 
-import HTMLLogo from "@/assets/html5-seeklogo.svg";
-import CSSLogo from "@/assets/css3-seeklogo.svg";
-import JSLogo from "@/assets/javascript-js-seeklogo.svg";
-import TSLogo from "@/assets/typescript-seeklogo.svg";
-import ReactLogo from "@/assets/react-seeklogo.svg";
-import AstroLogo from "@/assets/astro-icon-seeklogo.svg";
+import HTMLLogo from "@/assets/logos/html5-seeklogo.svg";
+import CSSLogo from "@/assets/logos/css-3-seeklogo.svg";
+import JSLogo from "@/assets/logos/javascript-js-seeklogo.svg";
+import TSLogo from "@/assets/logos/typescript-seeklogo.svg";
+import ReactLogo from "@/assets/logos/react-seeklogo.svg";
+import AstroLogo from "@/assets/logos/astro-icon-seeklogo.svg";
 
-import PostgresLogo from "@/assets/postgresql-seeklogo.svg";
-import MysqlLogo from "@/assets/mysql-seeklogo.svg";
-import MongoLogo from "@/assets/mongodb-seeklogo.svg";
-import RedisLogo from "@/assets/redis-seeklogo.svg";
+import PostgresLogo from "@/assets/logos/postgresql-seeklogo.svg";
+import MongoLogo from "@/assets/logos/mongodb-seeklogo.svg";
+import RedisLogo from "@/assets/logos/redis-seeklogo.svg";
 
-import TFLogo from "@/assets/terraform-seeklogo.svg";
-import K8sLogo from "@/assets/kubernetes-seeklogo.svg";
-import GHActionsLogo from "@/assets/github-actions-seeklogo.svg";
-import GCPLogo from "@/assets/google-cloud-platform-gcp-seeklogo.svg";
+import TFLogo from "@/assets/logos/terraform-seeklogo.svg";
+import K8sLogo from "@/assets/logos/kubernetes-seeklogo.svg";
+import GHActionsLogo from "@/assets/logos/github-actions-seeklogo.svg";
+import GCPLogo from "@/assets/logos/google-cloud-seeklogo.svg";
 
-import ArrowRight from "@/assets/arrow-right.svg"
+import ArrowRight from "@/assets/icons/arrow-right.svg"
 import Project from '@/components/Project.astro';
+import Skill from '@/components/Skill.astro';
 ---
 <Layout>
-	<main>
+	<main class="px-8">
 		<section class="mb-16">
-			<h1 class="bg-gradient-to-r from-primary to-accent inline-block text-transparent bg-clip-text font-bold text-6xl my-2 -ml-2">Cristian Ruiz</h1>
+			<h1 class="bg-gradient-to-r from-primary to-accent inline-block text-transparent bg-clip-text font-bold text-6xl my-2 -ml-1 sm:-ml-2">Cristian Ruiz</h1>
 			<h2 class="text-2xl text-black mb-2 dark:text-white">Backend Engineer</h2>
-			<p class="text-xl text-stone-600 dark:text-stone-300 leading-5">I build software to help companies increase their productivity</p>
+			<p class="text-xl text-stone-600 dark:text-stone-300 leading-5">As a backend engineer I build software to help companies increase their productivity</p>
 		</section>
 
-		<section class="mb-10">
+		<section class="mb-20">
 			<h3 class="text-stone-500 dark:text-stone-100 text-2xl opacity-60 mb-4">Now</h3>
 			<div class="flex gap-2">
-				<ArrowRight/>
+				<ArrowRight width={64} height={64}/>
 				<p class="text-xl">Working in the <Link href="https://mediamarktsaturn.com/" name="leading retailer in Europe" /> for consumer electronics 💾</p>
 			</div>
-
 		</section>
 
-		<section class="mb-10">
+		<section class="mb-20">
 			<h3 class="text-stone-500 dark:text-stone-100 text-2xl opacity-60 mb-4">Before</h3>
 			<div class="flex gap-2 mb-4">
-				<ArrowRight/>
+				<ArrowRight width={64} height={64}/>
 				<p class="text-xl">Helping to innovate and solving challenges on an international <Link href="https://hexad.es/" name="IT consultancy" /> for an <Link href="https://cariad.technology/" name="automotive company" /> 🚘</p>
 			</div>
 			<div class="flex gap-2">
-				<ArrowRight/>
+				<ArrowRight width={64} height={64}/>
 				<p class="text-xl">Optimizing and automating processes in a <Link href="https://effenmark.es/" name="energy company"/> 💡</p>
 			</div>
-
-
 		</section>
 
-		<section class="mb-10">
-			<h3 class="text-stone-500 dark:text-stone-100 text-2xl opacity-60 mb-4">Projects</h3>
+		<section class="mb-20">
+			<h3 class="text-stone-500 dark:text-stone-100 text-2xl opacity-60 mb-6">Projects</h3>
 			<div class="grid sm:grid-cols-2 lg:grid-cols-3 grid-cols-1 gap-4">
-				<Project href="https://esteticaderma.com/" title="Estética Derma" mainTech="https://astro-build.gallerycdn.vsassets.io/extensions/astro-build/astro-vscode/2.15.4/1729883772667/Microsoft.VisualStudio.Services.Icons.Default" secondaryTech="https://static-00.iconduck.com/assets.00/react-icon-2048x2048-o8k3ymqa.png" />
-				<Project href="https://github.com/crruizb/smartnews" title="Smart news" mainTech="https://astro-build.gallerycdn.vsassets.io/extensions/astro-build/astro-vscode/2.15.4/1729883772667/Microsoft.VisualStudio.Services.Icons.Default" secondaryTech="https://static-00.iconduck.com/assets.00/react-icon-2048x2048-o8k3ymqa.png" />
-				<Project href="https://github.com/crruizb/time_tracker" title="Time tracker" mainTech="https://astro-build.gallerycdn.vsassets.io/extensions/astro-build/astro-vscode/2.15.4/1729883772667/Microsoft.VisualStudio.Services.Icons.Default" secondaryTech="https://static-00.iconduck.com/assets.00/react-icon-2048x2048-o8k3ymqa.png"/>
+				<Project href="https://esteticaderma.com/" title="Estética Derma" mainTech={AstroLogo.src} secTech1={ReactLogo.src} />
+				<Project href="https://github.com/crruizb/smartnews" title="Smart news" mainTech={JavaLogo.src} secTech1={ReactLogo.src} secTech2={SpringLogo.src} secTech3={PostgresLogo.src} />
+				<Project href="https://github.com/crruizb/time_tracker" title="Time tracker" mainTech={GoLogo.src} secTech1={ReactLogo.src} secTech2={PostgresLogo.src}/>
 			</div>
 
 		</section>
 
 		<section class="mb-10">
-			<h3 class="text-stone-500 dark:text-stone-100 text-2xl opacity-60 mb-4">Skills</h3>
+			<h3 class="text-stone-500 dark:text-stone-100 text-2xl opacity-60 mb-6">Skills</h3>
+			<h4 class="mb-2 text-lg">Backend</h4>
+			<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-2 gap-y-2">
+				<Skill name="Go" logo={GoLogo.src}/>
+				<Skill name="Kotlin" logo={KotlinLogo.src}/>
+				<Skill name="Ktor" logo={KtorLogo.src}/>
+				<Skill name="Java" logo={JavaLogo.src}/>
+				<Skill name="Spring Boot" logo={SpringLogo.src}/>
+				<Skill name="Postgres" logo={PostgresLogo.src}/>
+				<Skill name="Mongo DB" logo={MongoLogo.src}/>
+				<Skill name="Redis" logo={RedisLogo.src}/>
+			</div>
 
-			<div class="grid grid-cols-6 grid-rows-4 gap-4">
-				<GoLogo width={48} height={48} />
-				<KotlinLogo width={64} height={64} />
-				<KtorLogo width={64} height={64} />
-				<JavaLogo width={48} height={48} />
-				<SpringLogo width={64} height={64} />
-				<HTMLLogo class="row-start-2" width={64} height={64} />
-				<CSSLogo class="row-start-2" width={64} height={64} />
-				<JSLogo class="row-start-2" width={64} height={64} />
-				<TSLogo class="row-start-2" width={64} height={64} />
-				<ReactLogo class="row-start-2" width={64} height={64} />
-				<AstroLogo class="row-start-2" width={64} height={64} />
-				<PostgresLogo class="row-start-3" width={64} height={64} />
-				<MysqlLogo class="row-start-3" width={64} height={64} />
-				<MongoLogo class="row-start-3" width={64} height={64} />
-				<RedisLogo class="row-start-3" width={64} height={64} />
-				<TFLogo class="row-start-4" width={64} height={64} />
-				<K8sLogo class="row-start-4" width={64} height={64} />
-				<GHActionsLogo class="row-start-4" width={64} height={64} />
-				<GCPLogo class="row-start-4" width={64} height={64} />
+			<h4 class="mb-2 my-6 text-lg">Frontend</h4>
+			<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-2 gap-y-2">
+				<Skill name="HTML" logo={HTMLLogo.src}/>
+				<Skill name="CSS" logo={CSSLogo.src}/>
+				<Skill name="Javascript" logo={JSLogo.src}/>
+				<Skill name="Typescript" logo={TSLogo.src}/>
+				<Skill name="React" logo={ReactLogo.src}/>
+				<Skill name="Astro" logo={AstroLogo.src}/>
+			</div>
+
+			<h4 class="mb-2 my-6 text-lg">CI/CD</h4>
+			<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-2 gap-y-2">
+				<Skill name="Terraform" logo={TFLogo.src}/>
+				<Skill name="Kubernetes" logo={K8sLogo.src}/>
+				<Skill name="Github Actions" logo={GHActionsLogo.src}/>
+				<Skill name="GCP" logo={GCPLogo.src}/>
 			</div>
 		</section>
-			
-    </div>
-
-        </div>
-    </div>
-		</div>
 	</main>
 </Layout>
