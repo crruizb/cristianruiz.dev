@@ -1,5 +1,8 @@
 ---
 import ThemeIcon from "@/components/ThemeIcon.astro";
+import GithubIcon from "@/assets/icons8-github.svg"
+import LinkedinIcon from "@/assets/icons8-linkedin.svg"
+import GmailIcon from "@/assets/icons8-gmail.svg"
 ---
 
 <!doctype html>
@@ -15,10 +18,15 @@ import ThemeIcon from "@/components/ThemeIcon.astro";
 		<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
 	</head>
 	<body class="mx-auto p-8 max-w-4xl grid min-h-screen grid-rows-[auto_1fr_auto]">
-		<header class="my-10 flex justify-end">
-			<ThemeIcon />
+		<header class="my-10 flex justify-end gap-4">
+			<GithubIcon width={32} height={32} />
+			<LinkedinIcon width={32} height={32} />
+			<GmailIcon width={32} height={32} />
+			<ThemeIcon  />
 		</header>
 		<slot />
-		<footer class="my-10">Footer</footer>
+		<footer class="my-10">
+			<p class="flex gap-2">cristianruiz.dev 🚀 {new Date().getFullYear()}</p>
+		</footer>
 	</body>
 </html>

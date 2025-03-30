@@ -24,6 +24,8 @@ import TFLogo from "@/assets/terraform-seeklogo.svg";
 import K8sLogo from "@/assets/kubernetes-seeklogo.svg";
 import GHActionsLogo from "@/assets/github-actions-seeklogo.svg";
 import GCPLogo from "@/assets/google-cloud-platform-gcp-seeklogo.svg";
+
+import ArrowRight from "@/assets/arrow-right.svg"
 ---
 <Layout>
 	<main>
@@ -33,26 +35,27 @@ import GCPLogo from "@/assets/google-cloud-platform-gcp-seeklogo.svg";
 			<p class="text-xl text-stone-600 dark:text-stone-300 leading-5">I build software to help companies increase their productivity</p>
 		</section>
 
-		<section class="mb-10 space-x-4">
-			<h3 class="text-stone-500 dark:text-stone-100 text-2xl opacity-60 mb-4">Find me on</h3>
-			<Link href="https://github.com/crruizb" name="GitHub"/>
-			<Link href="https://www.linkedin.com/in/cristian-ruiz-bonilla/" name="Linkedin"/>
-			<Link href="mailto:cristianruizbonilla@gmail.com" name="cristianruizbonilla@gmail.com"/>
-			<a></a>
-			<a></a>
-		</section>
-
 		<section class="mb-10">
 			<h3 class="text-stone-500 dark:text-stone-100 text-2xl opacity-60 mb-4">Now</h3>
-			<p class="text-xl">Working in the <Link href="https://mediamarktsaturn.com/" name="leading retailer in Europe" /> for consumer electronics</p>
+			<div class="flex gap-2">
+				<ArrowRight/>
+				<p class="text-xl">Working in the <Link href="https://mediamarktsaturn.com/" name="leading retailer in Europe" /> for consumer electronics 💾</p>
+			</div>
+
 		</section>
 
 		<section class="mb-10">
 			<h3 class="text-stone-500 dark:text-stone-100 text-2xl opacity-60 mb-4">Before</h3>
-			<ul>
-				<p class="text-xl">Helping companies to innovate and solving challenges on an international <Link href="https://hexad.es/" name="IT consultancy" /></p>
-				<p class="text-xl">Optimizing and automating processes in a <Link href="https://effenmark.es/" name="energy company"/></p>
-			</ul>
+			<div class="flex gap-2 mb-4">
+				<ArrowRight/>
+				<p class="text-xl">Helping to innovate and solving challenges on an international <Link href="https://hexad.es/" name="IT consultancy" /> for an <Link href="https://cariad.technology/" name="automotive company" /> 🚘</p>
+			</div>
+			<div class="flex gap-2">
+				<ArrowRight/>
+				<p class="text-xl">Optimizing and automating processes in a <Link href="https://effenmark.es/" name="energy company"/> ⚡</p>
+			</div>
+
+
 		</section>
 
 		<section class="mb-10">
@@ -65,25 +68,25 @@ import GCPLogo from "@/assets/google-cloud-platform-gcp-seeklogo.svg";
 			<h3 class="text-stone-500 dark:text-stone-100 text-2xl opacity-60 mb-4">Skills</h3>
 
 			<div class="grid grid-cols-6 grid-rows-5 gap-4">
-				<div><GoLogo width={48} height={48} /></div>
-				<div><KotlinLogo width={64} height={64} /></div>
-				<div><KtorLogo width={64} height={64} /></div>
-				<div><JavaLogo width={48} height={48} /></div>
-				<div><SpringLogo width={64} height={64} /></div>
-				<div class="row-start-2"><HTMLLogo width={64} height={64} /></div>
-				<div class="row-start-2"><CSSLogo width={64} height={64} /></div>
-				<div class="row-start-2"><JSLogo width={64} height={64} /></div>
-				<div class="row-start-2"><TSLogo width={64} height={64} /></div>
-				<div class="row-start-2"><ReactLogo width={64} height={64} /></div>
-				<div class="row-start-2"><AstroLogo width={64} height={64} /></div>
-				<div class="row-start-3"><PostgresLogo width={64} height={64} /></div>
-				<div class="row-start-3"><MysqlLogo width={64} height={64} /></div>
-				<div class="row-start-3"><MongoLogo width={64} height={64} /></div>
-				<div class="row-start-3"><RedisLogo width={64} height={64} /></div>
-				<div class="row-start-4"><TFLogo width={64} height={64} /></div>
-				<div class="row-start-4"><K8sLogo width={64} height={64} /></div>
-				<div class="row-start-4"><GHActionsLogo width={64} height={64} /></div>
-				<div class="row-start-4"><GCPLogo width={64} height={64} /></div>
+				<GoLogo width={48} height={48} />
+				<KotlinLogo width={64} height={64} />
+				<KtorLogo width={64} height={64} />
+				<JavaLogo width={48} height={48} />
+				<SpringLogo width={64} height={64} />
+				<HTMLLogo class="row-start-2" width={64} height={64} />
+				<CSSLogo class="row-start-2" width={64} height={64} />
+				<JSLogo class="row-start-2" width={64} height={64} />
+				<TSLogo class="row-start-2" width={64} height={64} />
+				<ReactLogo class="row-start-2" width={64} height={64} />
+				<AstroLogo class="row-start-2" width={64} height={64} />
+				<PostgresLogo class="row-start-3" width={64} height={64} />
+				<MysqlLogo class="row-start-3" width={64} height={64} />
+				<MongoLogo class="row-start-3" width={64} height={64} />
+				<RedisLogo class="row-start-3" width={64} height={64} />
+				<TFLogo class="row-start-4" width={64} height={64} />
+				<K8sLogo class="row-start-4" width={64} height={64} />
+				<GHActionsLogo class="row-start-4" width={64} height={64} />
+				<GCPLogo class="row-start-4" width={64} height={64} />
 			</div>
 		</section>
 	</main>

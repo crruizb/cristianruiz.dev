@@ -2,8 +2,8 @@
 
 @theme {
   --default-font-family: "Inter", sans-serif;
-  --color-primary: #05c5f5;
-  --color-accent: #74abe9;
+  --color-primary: #206aff;
+  --color-accent: #d97aff;
 }
 
 @custom-variant dark (&:where(.dark, .dark *));
@@ -11,4 +11,5 @@
 html.dark {
   background-color: #222222;
   color: #ffffff;
+  /* color: #d97aff; */
 }
