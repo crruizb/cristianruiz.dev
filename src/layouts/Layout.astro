@@ -18,15 +18,21 @@ import GmailIcon from "@/assets/icons/icons8-gmail.svg"
 		<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
 	</head>
 	<body class="mx-auto md:p-8 max-w-4xl min-h-screen grid grid-rows-[auto_1fr_auto]">
-		<header class="my-10 flex justify-end gap-4">
-			<GithubIcon width={32} height={32} />
-			<LinkedinIcon width={32} height={32} />
-			<GmailIcon width={32} height={32} />
+		<header class="my-10 flex justify-end gap-4 pr-4">
+			<a href="https://github.com/crruizb" target="_blank">
+				<GithubIcon width={32} height={32} />
+			</a>
+			<a href="https://www.linkedin.com/in/cristian-ruiz-bonilla/" target="_blank">
+				<LinkedinIcon width={32} height={32} />
+			</a>
+			<a href="mailto:cristianrb235@gmail.com" target="_blank">
+				<GmailIcon width={32} height={32} />
+			</a>
 			<ThemeIcon  />
 		</header>
 		<slot />
-		<hr class="h-px bg-gradient-to-r from-primary to-accent border-0 mt-24">
-		<footer class="mt-8 mx-auto flex justify-center">
+		<hr class="h-px bg-gradient-to-r from-primary to-accent border-0 mt-24 mx-8">
+		<footer class="my-8 mx-auto flex justify-center">
 			<a href="cristianruiz.dev" class="flex gap-2 ">cristianruiz.dev 🚀 {new Date().getFullYear()}</a>
 		</footer>
 	</body>
