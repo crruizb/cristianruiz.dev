@@ -26,6 +26,7 @@ import GHActionsLogo from "@/assets/github-actions-seeklogo.svg";
 import GCPLogo from "@/assets/google-cloud-platform-gcp-seeklogo.svg";
 
 import ArrowRight from "@/assets/arrow-right.svg"
+import Project from '@/components/Project.astro';
 ---
 <Layout>
 	<main>
@@ -52,7 +53,7 @@ import ArrowRight from "@/assets/arrow-right.svg"
 			</div>
 			<div class="flex gap-2">
 				<ArrowRight/>
-				<p class="text-xl">Optimizing and automating processes in a <Link href="https://effenmark.es/" name="energy company"/> ⚡</p>
+				<p class="text-xl">Optimizing and automating processes in a <Link href="https://effenmark.es/" name="energy company"/> 💡</p>
 			</div>
 
 
@@ -60,14 +61,18 @@ import ArrowRight from "@/assets/arrow-right.svg"
 
 		<section class="mb-10">
 			<h3 class="text-stone-500 dark:text-stone-100 text-2xl opacity-60 mb-4">Projects</h3>
-			<a>Time tracker for freelancers (WIP)</a>
-			<a>Estetica Derma</a>
+			<div class="grid sm:grid-cols-2 lg:grid-cols-3 grid-cols-1 gap-4">
+				<Project href="https://esteticaderma.com/" title="Estética Derma" mainTech="https://astro-build.gallerycdn.vsassets.io/extensions/astro-build/astro-vscode/2.15.4/1729883772667/Microsoft.VisualStudio.Services.Icons.Default" secondaryTech="https://static-00.iconduck.com/assets.00/react-icon-2048x2048-o8k3ymqa.png" />
+				<Project href="https://github.com/crruizb/smartnews" title="Smart news" mainTech="https://astro-build.gallerycdn.vsassets.io/extensions/astro-build/astro-vscode/2.15.4/1729883772667/Microsoft.VisualStudio.Services.Icons.Default" secondaryTech="https://static-00.iconduck.com/assets.00/react-icon-2048x2048-o8k3ymqa.png" />
+				<Project href="https://github.com/crruizb/time_tracker" title="Time tracker" mainTech="https://astro-build.gallerycdn.vsassets.io/extensions/astro-build/astro-vscode/2.15.4/1729883772667/Microsoft.VisualStudio.Services.Icons.Default" secondaryTech="https://static-00.iconduck.com/assets.00/react-icon-2048x2048-o8k3ymqa.png"/>
+			</div>
+
 		</section>
 
 		<section class="mb-10">
 			<h3 class="text-stone-500 dark:text-stone-100 text-2xl opacity-60 mb-4">Skills</h3>
 
-			<div class="grid grid-cols-6 grid-rows-5 gap-4">
+			<div class="grid grid-cols-6 grid-rows-4 gap-4">
 				<GoLogo width={48} height={48} />
 				<KotlinLogo width={64} height={64} />
 				<KtorLogo width={64} height={64} />
@@ -89,5 +94,11 @@ import ArrowRight from "@/assets/arrow-right.svg"
 				<GCPLogo class="row-start-4" width={64} height={64} />
 			</div>
 		</section>
+			
+    </div>
+
+        </div>
+    </div>
+		</div>
 	</main>
 </Layout>
