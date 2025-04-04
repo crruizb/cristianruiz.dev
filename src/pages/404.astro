@@ -1,0 +1,20 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import "@/styles/global.css"
+import Link from '@/components/Link.astro';
+import ArrowRight from "@/assets/icons/arrow-right.svg"
+---
+<Layout>
+    <main>
+        <section class="mb-16">
+			<h1 class="bg-gradient-to-r from-primary to-accent inline-block text-transparent bg-clip-text font-bold text-6xl my-2 -ml-1 sm:-ml-2">404 error</h1>
+			<p class="text-xl mb-4">The requested page does not exist!</p>
+
+            <div class="flex gap-2">
+                <ArrowRight width={64} height={64}/>
+                <Link href="https://cristianruiz.dev" name="Back to home" />
+            </div>
+
+		</section>
+    </main>
+</Layout>
