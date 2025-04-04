@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 @theme {
-  --default-font-family: "Inter", sans-serif;
+  --default-font-family: "Roboto Mono", sans-serif;
   --color-primary: #206aff;
   --color-accent: #d97aff;
 }
@@ -11,4 +11,12 @@
 html.dark {
   background-color: #222222;
   color: #ffffff;
+}
+
+@font-face {
+  font-family: "Roboto Mono";
+  src: url("/fonts/RobotoMono-VariableFont_wght.ttf") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
 }
