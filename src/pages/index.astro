@@ -59,9 +59,9 @@ import Skill from '@/components/Skill.astro';
 		<section class="mb-20">
 			<h3 class="text-stone-500 dark:text-stone-100 text-2xl opacity-60 mb-6">Projects</h3>
 			<div class="grid sm:grid-cols-2 lg:grid-cols-3 grid-cols-1 gap-4">
-				<Project href="https://esteticaderma.com/" title="Estética Derma" mainTech={AstroLogo.src} secTech1={ReactLogo.src} />
-				<Project href="https://smartnews.pages.dev" title="Smart news" mainTech={JavaLogo.src} secTech1={ReactLogo.src} secTech2={SpringLogo.src} secTech3={PostgresLogo.src} />
-				<Project href="https://github.com/crruizb/time_tracker" title="Time tracker" mainTech={GoLogo.src} secTech1={ReactLogo.src} secTech2={PostgresLogo.src}/>
+				<Project href="https://esteticaderma.com/" title="Estética Derma" mainTech={{src: AstroLogo.src, alt: "Astro logo"}} secTech1={{src: ReactLogo.src, alt: "React logo"}} />
+				<Project href="https://smartnews.pages.dev" title="Smart news" mainTech={{src: JavaLogo.src, alt: "Java logo"}} secTech1={{src: ReactLogo.src, alt: "React logo"}} secTech2={{src: SpringLogo.src, alt: "Spring Boot logo"}} secTech3={{src: PostgresLogo.src, alt: "Postgres logo"}} />
+				<Project href="https://github.com/crruizb/time_tracker" title="Time tracker" mainTech={{src: GoLogo.src, alt: "Go logo"}} secTech1={{src: ReactLogo.src, alt: "React logo"}} secTech2={{src: PostgresLogo.src, alt: "Postgres logo"}}/>
 			</div>
 
 		</section>
