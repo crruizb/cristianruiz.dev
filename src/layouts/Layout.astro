@@ -3,6 +3,7 @@ import ThemeIcon from "@/components/ThemeIcon.astro";
 import GithubIcon from "@/assets/icons/icons8-github.svg"
 import LinkedinIcon from "@/assets/icons/icons8-linkedin.svg"
 import GmailIcon from "@/assets/icons/icons8-gmail.svg"
+import AstroLogo from "@/assets/logos/astro-icon-seeklogo.svg"
 ---
 
 <!doctype html>
@@ -11,11 +12,33 @@ import GmailIcon from "@/assets/icons/icons8-gmail.svg"
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.png" />
-		<meta name="generator" content={Astro.generator} />
 		<title>Cristian Ruiz &mdash; Backend engineer</title>
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+
+		<meta
+		name="description"
+		content="Evento de boxeo aficionado entre streamers y creadores de contenido, organizado por Ibai Llanos"
+	  />
+  
+	  <meta property="og:url" content="https://cristianruiz.dev" />
+	  <meta property="og:type" content="website" />
+	  <meta property="og:title" content="Cristian Ruiz - Backend engineer" />
+	  <meta
+		property="og:description"
+		content="Portfolio of Cristian Ruiz to show projects and skills"
+	  />
+	  <meta property="og:image" content={AstroLogo.src} />
+	  <meta property="og:locale" content="en_EN" />
+	  <meta property="og:site_name" content="Cristian Ruiz - Backend engineer" />
+  
+	  <meta name="twitter:card" content="summary_large_image" />
+	  <meta name="twitter:title" content="Cristian Ruiz - Backend engineer" />
+	  <meta
+		name="twitter:description"
+		content="Portfolio of Cristian Ruiz to show projects and skills"
+	  />
 	</head>
 	<body class="mx-auto md:p-8 max-w-4xl min-h-screen grid grid-rows-[auto_1fr_auto]">
 		<header class="my-10 flex justify-end gap-4 pr-4">
