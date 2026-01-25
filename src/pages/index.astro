@@ -58,11 +58,18 @@ import Skill from '@/components/Skill.astro';
 
 		<section class="mb-20">
 			<h3 class="text-stone-700 dark:text-stone-100 text-2xl opacity-60 mb-6">Projects</h3>
-			<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+			<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
 				<div class="space-y-1">
 					<Project href="https://steamcompanion.dpdns.org" title="Steam Companion" mainTech={{src: KotlinLogo.src, alt: "Kotlin logo"}} secTech1={{src: ReactLogo.src, alt: "React logo"}} secTech2={{src: SpringLogo.src, alt: "Spring Boot logo"}} secTech3={{src: PostgresLogo.src, alt: "Postgres logo"}}/>
 					<div class="pl-4 text-xs text-stone-500 dark:text-stone-400">
 						<Link href="https://github.com/crruizb/steam-companion" name="View source →" />
+					</div>
+				</div>
+
+				<div class="space-y-1">
+					<Project href="https://github.com/crruizb/hetzner-server-management" title="Hetzner SV mgmt" mainTech={{src: K8sLogo.src, alt: "Kubernetes logo"}} secTech1={{src: TFLogo.src, alt: "Terraform logo"}} />
+					<div class="pl-4 text-xs text-stone-500 dark:text-stone-400">
+						<Link href="https://github.com/crruizb/hetzner-server-management" name="View source →" />
 					</div>
 				</div>
 
