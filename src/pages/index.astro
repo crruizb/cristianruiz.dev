@@ -33,14 +33,48 @@ import Skill from '@/components/Skill.astro';
 		<section class="mb-16">
 			<h1 class="bg-linear-to-r from-primary to-accent inline-block text-transparent bg-clip-text font-bold text-6xl my-2 -ml-1 sm:-ml-2">Cristian Ruiz</h1>
 			<h2 class="text-2xl text-black mb-2 dark:text-white">Backend Engineer</h2>
-			<p class="text-xl text-stone-600 dark:text-stone-300 leading-5">As a backend engineer I build software to help companies increase their productivity</p>
+			<p class="text-xl text-stone-600 dark:text-stone-300 leading-7">I design and build scalable distributed systems, architect microservices platforms, and solve complex technical challenges</p>
+		</section>
+
+		<section class="mb-20">
+			<h3 class="text-stone-700 dark:text-stone-100 text-2xl opacity-60 mb-6">Technical Expertise</h3>
+			<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+				<div class="flex gap-2 items-start">
+					<ArrowRight width={24} height={24} class="shrink-0 mt-1"/>
+					<div>
+						<p class="text-lg font-medium text-stone-800 dark:text-stone-100">10+ Years of Experience</p>
+						<p class="text-base text-stone-600 dark:text-stone-400">Designing and building scalable backend systems across retail, automotive, and energy sectors</p>
+					</div>
+				</div>
+				<div class="flex gap-2 items-start">
+					<ArrowRight width={24} height={24} class="shrink-0 mt-1"/>
+					<div>
+						<p class="text-lg font-medium text-stone-800 dark:text-stone-100">Technical Mentorship</p>
+						<p class="text-base text-stone-600 dark:text-stone-400">Guiding developers through code reviews, pair programming, and architectural decisions</p>
+					</div>
+				</div>
+				<div class="flex gap-2 items-start">
+					<ArrowRight width={24} height={24} class="shrink-0 mt-1"/>
+					<div>
+						<p class="text-lg font-medium text-stone-800 dark:text-stone-100">Distributed Systems Architect</p>
+						<p class="text-base text-stone-600 dark:text-stone-400">Microservices, event-driven architectures, and high-availability systems design</p>
+					</div>
+				</div>
+				<div class="flex gap-2 items-start">
+					<ArrowRight width={24} height={24} class="shrink-0 mt-1"/>
+					<div>
+						<p class="text-lg font-medium text-stone-800 dark:text-stone-100">Cloud & Infrastructure</p>
+						<p class="text-base text-stone-600 dark:text-stone-400">Kubernetes, CI/CD pipelines, and cloud-native architecture on GCP</p>
+					</div>
+				</div>
+			</div>
 		</section>
 
 		<section class="mb-20">
 			<h3 class="text-stone-700 dark:text-stone-100 text-2xl opacity-60 mb-4">Now</h3>
 			<div class="flex gap-2">
 				<ArrowRight width={24} height={24} class="shrink-0 mt-1"/>
-				<p class="text-xl">Working in the <Link href="https://mediamarktsaturn.com/" name="leading retailer in Europe" /> for consumer electronics 💾</p>
+				<p class="text-xl">Working at <Link href="https://mediamarktsaturn.com/" name="MediaMarktSaturn" />, Europe's leading consumer electronics retailer, architecting microservices infrastructure and driving technical decisions for high traffic e-commerce platform 💾</p>
 			</div>
 		</section>
 
@@ -48,16 +82,17 @@ import Skill from '@/components/Skill.astro';
 			<h3 class="text-stone-700 dark:text-stone-100 text-2xl opacity-60 mb-4">Before</h3>
 			<div class="flex gap-2 mb-4 items-start">
 				<ArrowRight width={24} height={24} class="shrink-0 mt-1"/>
-				<p class="text-xl">Helping to innovate and solving challenges on an international <Link href="https://hexad.es/" name="IT consultancy" /> for an <Link href="https://cariad.technology/" name="automotive company" /> 🚘</p>
+				<p class="text-xl">Built cloud-native solutions for <Link href="https://cariad.technology/" name="CARIAD" /> (Volkswagen Group) at <Link href="https://hexad.es/" name="Hexad" />. Designed event-driven architectures, implemented CI/CD pipelines, and established engineering best practices 🚘</p>
 			</div>
 			<div class="flex gap-2">
 				<ArrowRight width={24} height={24} class="shrink-0 mt-1"/>
-				<p class="text-xl">Optimizing and automating processes in an <Link href="https://effenmark.es/" name="energy company"/> 💡</p>
+				<p class="text-xl">Architected automation systems at <Link href="https://effenmark.es/" name="Effenmark"/> and optimized workflows for their energy management platform 💡</p>
 			</div>
 		</section>
 
 		<section class="mb-20">
-			<h3 class="text-stone-700 dark:text-stone-100 text-2xl opacity-60 mb-6">Projects</h3>
+			<h3 class="text-stone-700 dark:text-stone-100 text-2xl opacity-60 mb-6">Side Projects</h3>
+			<p class="text-base text-stone-600 dark:text-stone-400 mb-6">Personal projects I build to explore new technologies and experiment with different architectural patterns</p>
 			<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
 				<div class="space-y-1">
 					<Project href="https://steamcompanion.dpdns.org" title="Steam Companion" mainTech={{src: KotlinLogo.src, alt: "Kotlin logo"}} secTech1={{src: ReactLogo.src, alt: "React logo"}} secTech2={{src: SpringLogo.src, alt: "Spring Boot logo"}} secTech3={{src: PostgresLogo.src, alt: "Postgres logo"}}/>
@@ -91,6 +126,7 @@ import Skill from '@/components/Skill.astro';
 
 		<section class="mb-10">
 			<h3 class="text-stone-700 dark:text-stone-100 text-2xl opacity-60 mb-6">Skills</h3>
+
 			<h4 class="mb-2 text-lg">Backend</h4>
 			<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-2 gap-y-2">
 				<Skill name="Go" logo={GoLogo.src}/>
