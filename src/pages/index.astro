@@ -95,6 +95,13 @@ import Skill from '@/components/Skill.astro';
 			<p class="text-base text-stone-600 dark:text-stone-400 mb-6">Personal projects I build to explore new technologies and experiment with different architectural patterns</p>
 			<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
 				<div class="space-y-1">
+					<Project href="https://prexario.dpdns.org" title="Prexario" mainTech={{src: KotlinLogo.src, alt: "Kotlin logo"}} secTech1={{src: ReactLogo.src, alt: "React logo"}} secTech2={{src: SpringLogo.src, alt: "Spring Boot logo"}} secTech3={{src: PostgresLogo.src, alt: "Postgres logo"}}/>
+					<div class="pl-4 text-xs text-stone-500 dark:text-stone-400">
+						<Link href="https://github.com/crruizb/prexario" name="View source →" />
+					</div>
+				</div>
+
+				<div class="space-y-1">
 					<Project href="https://steamcompanion.dpdns.org" title="Steam Companion" mainTech={{src: KotlinLogo.src, alt: "Kotlin logo"}} secTech1={{src: ReactLogo.src, alt: "React logo"}} secTech2={{src: SpringLogo.src, alt: "Spring Boot logo"}} secTech3={{src: PostgresLogo.src, alt: "Postgres logo"}}/>
 					<div class="pl-4 text-xs text-stone-500 dark:text-stone-400">
 						<Link href="https://github.com/crruizb/steam-companion" name="View source →" />
