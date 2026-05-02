@@ -8,9 +8,9 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@tailwindcss/oxide-linux-x64-gnu": "^4.2.1",
-    "@tailwindcss/vite": "^4.2.1",
-    "astro": "^5.18.0",
-    "tailwindcss": "^4.2.1"
+    "@tailwindcss/oxide-linux-x64-gnu": "^4.2.4",
+    "@tailwindcss/vite": "^4.2.4",
+    "astro": "^6.2.1",
+    "tailwindcss": "^4.2.4"
   }
 }
