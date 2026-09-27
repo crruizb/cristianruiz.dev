@@ -1,19 +1,24 @@
 ---
-const {title, description, mainTech, secTech1, secTech2, secTech3, href} = Astro.props
+const { title, description, techs = [], href, source } = Astro.props
 ---
-<a href={href} target="_blank" class="group block border-l-2 border-stone-300 dark:border-stone-700 pl-4 py-2 hover:border-primary dark:hover:border-accent transition-all duration-300 hover:pl-6">
-	<div class="">
-		<div class="flex-1">
-			<h4 class="text-xl text-stone-700 dark:text-stone-200 group-hover:text-primary dark:group-hover:text-accent transition-colors font-medium">
-				{title}
-			</h4>
-			{description && <p class="text-sm text-stone-500 dark:text-stone-400 mt-1">{description}</p>}
-		</div>
-		<div class="flex gap-1.5 items-center mt-1 flex-shrink-0">
-			{mainTech && <div class="p-1.5 rounded-md bg-stone-100 dark:bg-stone-800 border border-stone-200 dark:border-stone-700 group-hover:scale-110 transition-transform"><img class="h-4 w-4" height="16" width="16" src={mainTech.src} alt={mainTech.alt} /></div>}
-			{secTech1 && <div class="p-1.5 rounded-md bg-stone-100 dark:bg-stone-800 border border-stone-200 dark:border-stone-700 group-hover:scale-110 transition-transform"><img class="h-4 w-4" height="16" width="16" src={secTech1.src} alt={secTech1.alt} /></div>}
-			{secTech2 && <div class="p-1.5 rounded-md bg-stone-100 dark:bg-stone-800 border border-stone-200 dark:border-stone-700 group-hover:scale-110 transition-transform"><img class="h-4 w-4" height="16" width="16" src={secTech2.src} alt={secTech2.alt} /></div>}
-			{secTech3 && <div class="p-1.5 rounded-md bg-stone-100 dark:bg-stone-800 border border-stone-200 dark:border-stone-700 group-hover:scale-110 transition-transform"><img class="h-4 w-4" height="16" width="16" src={secTech3.src} alt={secTech3.alt} /></div>}
-		</div>
+<li class="group relative flex items-center justify-between gap-4 -mx-3 px-3 py-4 rounded-lg border-b border-stone-200/70 dark:border-stone-800/70 last:border-b-0 hover:border-transparent hover:bg-linear-to-r hover:from-primary/[0.06] hover:to-accent/[0.08] transition-colors">
+	<div class="min-w-0">
+		<a href={href} target="_blank" rel="noopener" class="flex items-center gap-2 text-stone-900 dark:text-stone-100 font-medium after:absolute after:inset-0">
+			<span class="group-hover:text-primary dark:group-hover:text-accent transition-colors">{title}</span>
+			<span aria-hidden="true" class="text-stone-400 group-hover:text-accent transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5">↗</span>
+		</a>
+		{description && <p class="text-sm text-stone-500 dark:text-stone-400 mt-1">{description}</p>}
+		{source && (
+			<a href={source} target="_blank" rel="noopener" class="relative z-10 text-xs text-stone-500 hover:text-primary dark:hover:text-accent transition-colors">
+				source code
+			</a>
+		)}
 	</div>
-</a>
+	<div class="flex gap-1 shrink-0">
+		{techs.map((tech: { src: string; alt: string }) => (
+			<span class="p-1.5 rounded-md bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-800 group-hover:border-accent/40 transition-colors" title={tech.alt.replace(" logo", "")}>
+				<img class="h-4 w-4" height="16" width="16" src={tech.src} alt={tech.alt} />
+			</span>
+		))}
+	</div>
+</li>

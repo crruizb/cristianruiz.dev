@@ -1,67 +1,96 @@
 ---
+import "@/styles/global.css"
 import ThemeIcon from "@/components/ThemeIcon.astro";
-import GithubIcon from "@/assets/icons/icons8-github.svg"
-import LinkedinIcon from "@/assets/icons/icons8-linkedin.svg"
-import GmailIcon from "@/assets/icons/icons8-gmail.svg"
 import AstroLogo from "@/assets/logos/astro-icon-seeklogo.svg"
+
+const title = "Cristian Ruiz — Product Engineer"
+const description = "Portfolio of Cristian Ruiz to show projects and skills"
+const socials = [
+	{
+		href: "https://github.com/crruizb",
+		label: "GitHub",
+		path: "M12 .5a11.5 11.5 0 0 0-3.64 22.41c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.52-1.33-1.28-1.69-1.28-1.69-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.56-.29-5.25-1.28-5.25-5.69 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.84 1.19 3.1 0 4.42-2.7 5.4-5.27 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .5Z",
+	},
+	{
+		href: "https://www.linkedin.com/in/cristian-ruiz-bonilla/",
+		label: "LinkedIn",
+		path: "M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13ZM7.12 20.45H3.56V9h3.56v11.45ZM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0Z",
+	},
+	{
+		href: "mailto:me@cristianruiz.dev",
+		label: "Email",
+		path: "M2 5.5A2.5 2.5 0 0 1 4.5 3h15A2.5 2.5 0 0 1 22 5.5v13a2.5 2.5 0 0 1-2.5 2.5h-15A2.5 2.5 0 0 1 2 18.5v-13Zm2.3-.5 7.7 6.2L19.7 5H4.3ZM20 6.6l-7.37 5.93a1 1 0 0 1-1.26 0L4 6.6v11.9c0 .28.22.5.5.5h15a.5.5 0 0 0 .5-.5V6.6Z",
+	},
+]
 ---
 
 <!doctype html>
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.png" />
-		<title>Cristian Ruiz &mdash; Backend engineer</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="icon" type="image/png" href="/favicon.png" />
+		<title>{title}</title>
 
 		<link
 			rel="preload"
 			href="/fonts/RobotoMono-VariableFont_wght.ttf"
 			as="font"
-			type="font/woff2"
+			type="font/ttf"
 			crossorigin="anonymous"
 		/>
 
-		<meta
-		name="description"
-		content="Portfolio of Cristian Ruiz to show projects and skills"
-	  />
-  
-	  <meta property="og:url" content="https://cristianruiz.dev" />
-	  <meta property="og:type" content="website" />
-	  <meta property="og:title" content="Cristian Ruiz - Backend engineer" />
-	  <meta
-		property="og:description"
-		content="Portfolio of Cristian Ruiz to show projects and skills"
-	  />
-	  <meta property="og:image" content={AstroLogo.src} />
-	  <meta property="og:locale" content="en_EN" />
-	  <meta property="og:site_name" content="Cristian Ruiz - Backend engineer" />
-  
-	  <meta name="twitter:card" content="summary_large_image" />
-	  <meta name="twitter:title" content="Cristian Ruiz - Backend engineer" />
-	  <meta
-		name="twitter:description"
-		content="Portfolio of Cristian Ruiz to show projects and skills"
-	  />
+		<meta name="description" content={description} />
+
+		<meta property="og:url" content="https://cristianruiz.dev" />
+		<meta property="og:type" content="website" />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:image" content={AstroLogo.src} />
+		<meta property="og:locale" content="en_EN" />
+		<meta property="og:site_name" content={title} />
+
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content={title} />
+		<meta name="twitter:description" content={description} />
+
+		<!-- Apply theme before first paint to avoid a flash -->
+		<script is:inline>
+			(() => {
+				let theme = null;
+				try { theme = localStorage.getItem("theme"); } catch {}
+				if (!theme) theme = matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+				document.documentElement.classList.toggle("dark", theme === "dark");
+			})();
+		</script>
 	</head>
-	<body class="mx-auto md:p-8 max-w-4xl min-h-screen grid grid-rows-[auto_1fr_auto]">
-		<header class="my-10 flex justify-end gap-4 pr-4">
-			<a href="https://github.com/crruizb" target="_blank">
-				<GithubIcon width={32} height={32} aria-label="Github link to crruizb github" />
+	<body class="overflow-x-clip mx-auto max-w-3xl min-h-screen px-6 grid grid-rows-[auto_1fr_auto]">
+		<header class="flex items-center justify-between py-8">
+			<a href="/" class="text-sm font-semibold tracking-tight text-stone-900 dark:text-stone-100">
+				cr<span class="bg-linear-to-r from-primary to-accent bg-clip-text text-transparent">.</span>
 			</a>
-			<a href="https://www.linkedin.com/in/cristian-ruiz-bonilla/" target="_blank">
-				<LinkedinIcon width={32} height={32} aria-label="Linkedin link to Cristian Ruiz linkedin"/>
-			</a>
-			<a href="mailto:me@cristianruiz.dev" target="_blank">
-				<GmailIcon width={32} height={32} aria-label="Mailto link to me@cristianruiz.dev" />
-			</a>
-			<ThemeIcon  />
+			<nav class="flex items-center gap-1">
+				{socials.map((s) => (
+					<a
+						href={s.href}
+						target="_blank"
+						rel="noopener"
+						aria-label={s.label}
+						title={s.label}
+						class="p-2 rounded-full text-stone-500 hover:text-stone-900 hover:bg-stone-200/60 dark:hover:text-stone-100 dark:hover:bg-stone-800 transition-colors"
+					>
+						<svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d={s.path} /></svg>
+					</a>
+				))}
+				<span class="w-px h-4 bg-stone-300 dark:bg-stone-700 mx-1"></span>
+				<ThemeIcon />
+			</nav>
 		</header>
 		<slot />
-		<hr class="h-px bg-linear-to-r from-primary to-accent border-0 mt-24 mx-8">
-		<footer class="my-8 mx-auto flex justify-center">
-			<a href="https://cristianruiz.dev" class="flex gap-2 ">cristianruiz.dev 🚀 {new Date().getFullYear()}</a>
+		<div aria-hidden="true" class="mt-12 h-px bg-linear-to-r from-transparent via-accent/50 to-transparent"></div>
+		<footer class="py-10 flex justify-between text-xs text-stone-500">
+			<span>© {new Date().getFullYear()} Cristian Ruiz</span>
+			<a href="mailto:me@cristianruiz.dev" class="hover:text-primary dark:hover:text-accent transition-colors">me@cristianruiz.dev</a>
 		</footer>
 	</body>
 </html>

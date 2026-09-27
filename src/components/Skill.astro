@@ -1,7 +1,7 @@
 ---
 const { name, logo } = Astro.props
 ---
-<div class="flex items-center gap-3 rounded-md p-3 bg-stone-900/5 dark:bg-[#ffffff0a] dark:backdrop-blur-2xl hover:bg-stone-900/20">
-    <img src={logo} alt={name} class="w-12 h-12 p-2 items-center justify-center rounded-lg bg-white dark:bg-[#ffffff0a]"/>
-    <span class="text-xs sm:text-sm">{name}</span>
-</div>
+<li class="flex items-center gap-2 rounded-full border border-stone-200 dark:border-stone-800 bg-white dark:bg-stone-900 pl-1.5 pr-3 py-1 text-sm text-stone-700 dark:text-stone-300 hover:border-accent/60 hover:text-stone-900 dark:hover:text-stone-100 hover:shadow-[0_0_0_3px] hover:shadow-accent/15 transition-all">
+	<img src={logo} alt="" class="w-5 h-5 p-0.5" />
+	<span>{name}</span>
+</li>

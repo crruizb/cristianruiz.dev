@@ -1,20 +1,15 @@
 ---
 import Layout from '@/layouts/Layout.astro';
-import "@/styles/global.css"
-import Link from '@/components/Link.astro';
-import ArrowRight from "@/assets/icons/arrow-right.svg"
 ---
 <Layout>
-    <main>
-        <section class="mb-16">
-			<h1 class="bg-linear-to-r from-primary to-accent inline-block text-transparent bg-clip-text font-bold text-6xl my-2 -ml-1 sm:-ml-2">404 error</h1>
-			<p class="text-xl mb-4">The requested page does not exist!</p>
-
-            <div class="flex gap-2">
-                <ArrowRight width={64} height={64}/>
-                <Link href="https://cristianruiz.dev" name="Back to home" />
-            </div>
-
-		</section>
-    </main>
+	<main class="flex flex-col justify-center py-24">
+		<p class="text-xs uppercase tracking-[0.2em] text-stone-500 mb-6">Error 404</p>
+		<h1 class="text-5xl sm:text-6xl font-bold tracking-tight text-stone-900 dark:text-stone-50">
+			Page not found<span class="bg-linear-to-r from-primary to-accent bg-clip-text text-transparent">.</span>
+		</h1>
+		<p class="mt-6 text-lg text-stone-600 dark:text-stone-400">The requested page does not exist.</p>
+		<a href="/" class="group mt-10 inline-flex items-center gap-2 text-sm font-medium text-stone-900 dark:text-stone-100">
+			<span class="transition-transform group-hover:-translate-x-1">←</span> Back to home
+		</a>
+	</main>
 </Layout>

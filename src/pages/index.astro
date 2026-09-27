@@ -1,7 +1,10 @@
 ---
 import Layout from '@/layouts/Layout.astro';
-import "@/styles/global.css"
 import Link from '@/components/Link.astro';
+import Section from '@/components/Section.astro';
+import Project from '@/components/Project.astro';
+import Skill from '@/components/Skill.astro';
+
 import GoLogo from "@/assets/logos/go-seeklogo.svg";
 import KotlinLogo from "@/assets/logos/kotlin-seeklogo.svg";
 import KtorLogo from "@/assets/logos/ktor-icon-seeklogo.svg";
@@ -24,145 +27,114 @@ import K8sLogo from "@/assets/logos/kubernetes-seeklogo.svg";
 import GHActionsLogo from "@/assets/logos/github-actions-seeklogo.svg";
 import GCPLogo from "@/assets/logos/google-cloud-seeklogo.svg";
 
-import ArrowRight from "@/assets/icons/arrow-right.svg"
-import Project from '@/components/Project.astro';
-import Skill from '@/components/Skill.astro';
+const tech = {
+	kotlin: { src: KotlinLogo.src, alt: "Kotlin logo" },
+	java: { src: JavaLogo.src, alt: "Java logo" },
+	react: { src: ReactLogo.src, alt: "React logo" },
+	spring: { src: SpringLogo.src, alt: "Spring Boot logo" },
+	postgres: { src: PostgresLogo.src, alt: "Postgres logo" },
+	k8s: { src: K8sLogo.src, alt: "Kubernetes logo" },
+	terraform: { src: TFLogo.src, alt: "Terraform logo" },
+	astro: { src: AstroLogo.src, alt: "Astro logo" },
+}
+
+const expertise = [
+	{ title: "10+ years of experience", text: "Designing and building scalable backend systems across retail, automotive, and energy sectors" },
+	{ title: "Technical mentorship", text: "Guiding developers through code reviews, pair programming, and architectural decisions" },
+	{ title: "Distributed systems", text: "Microservices, event-driven architectures, and high-availability systems design" },
+	{ title: "Cloud & infrastructure", text: "Kubernetes, CI/CD pipelines, and cloud-native architecture on GCP" },
+]
+
+const projects = [
+	{ title: "Smart news", href: "https://smartnews.pages.dev", source: "https://github.com/crruizb/smartnews", techs: [tech.java, tech.react, tech.spring, tech.postgres] },
+	{ title: "Hetzner SV mgmt", href: "https://github.com/crruizb/hetzner-server-management", source: "https://github.com/crruizb/hetzner-server-management", techs: [tech.k8s, tech.terraform] },
+	{ title: "Prexario", href: "https://prexario.dpdns.org", source: "https://github.com/crruizb/prexario", techs: [tech.kotlin, tech.react, tech.spring, tech.postgres] },
+	{ title: "Steam Companion", href: "https://steamcompanion.dpdns.org", source: "https://github.com/crruizb/steam-companion", techs: [tech.kotlin, tech.react, tech.spring, tech.postgres] },
+	{ title: "Estética Derma", href: "https://esteticaderma.com/", source: "https://github.com/crruizb/estetica_derma", techs: [tech.astro, tech.react] },
+]
+
+const skills = [
+	{ group: "Backend", items: [["Go", GoLogo], ["Kotlin", KotlinLogo], ["Ktor", KtorLogo], ["Java", JavaLogo], ["Spring Boot", SpringLogo], ["Postgres", PostgresLogo], ["MongoDB", MongoLogo], ["Redis", RedisLogo]] },
+	{ group: "Frontend", items: [["HTML", HTMLLogo], ["CSS", CSSLogo], ["JavaScript", JSLogo], ["TypeScript", TSLogo], ["React", ReactLogo], ["Astro", AstroLogo]] },
+	{ group: "Infra & CI/CD", items: [["Kubernetes", K8sLogo], ["GitHub Actions", GHActionsLogo], ["GCP", GCPLogo], ["Terraform", TFLogo]] },
+] as const
 ---
 <Layout>
-	<main class="px-8">
-		<section class="mb-16">
-			<h1 class="bg-linear-to-r from-primary to-accent inline-block text-transparent bg-clip-text font-bold text-6xl my-2 -ml-1 sm:-ml-2">Cristian Ruiz</h1>
-			<h2 class="text-2xl text-black mb-2 dark:text-white">Backend Engineer</h2>
-			<p class="text-xl text-stone-600 dark:text-stone-300 leading-7">I design and build scalable distributed systems, architect microservices platforms, and solve complex technical challenges</p>
+	<main>
+		<section class="reveal relative pt-12 pb-20 md:pt-20 md:pb-28">
+			<div aria-hidden="true" class="pointer-events-none absolute -top-24 -left-24 -z-10 h-80 w-80 rounded-full bg-primary/20 blur-3xl dark:bg-primary/25"></div>
+			<div aria-hidden="true" class="pointer-events-none absolute top-10 left-40 -z-10 h-72 w-72 rounded-full bg-accent/25 blur-3xl dark:bg-accent/20"></div>
+			<p class="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/5 dark:border-accent/25 dark:bg-accent/10 px-3 py-1 text-xs uppercase tracking-[0.2em] text-primary dark:text-accent mb-8">
+				<span class="relative flex h-2 w-2">
+					<span class="absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-60 animate-ping motion-reduce:hidden"></span>
+					<span class="relative inline-flex h-2 w-2 rounded-full bg-emerald-500"></span>
+				</span>
+				Product Engineer
+			</p>
+			<h1 class="text-5xl sm:text-6xl font-bold tracking-tight text-stone-900 dark:text-stone-50 -ml-0.5">
+				Cristian Ruiz<span class="bg-linear-to-r from-primary to-accent bg-clip-text text-transparent">.</span>
+			</h1>
+			<p class="mt-6 max-w-xl text-lg leading-8 text-stone-600 dark:text-stone-400">
+				I build products end to end, from the <span class="text-stone-900 dark:text-stone-100 font-medium">backend systems</span> that keep them running to the <span class="text-stone-900 dark:text-stone-100 font-medium">interfaces</span> people use every day. I care about shipping things that <span class="bg-linear-to-r from-primary to-accent bg-clip-text text-transparent font-semibold">solve real problems</span> and scale with them.
+			</p>
 		</section>
 
-		<section class="mb-20">
-			<h3 class="text-stone-700 dark:text-stone-100 text-2xl opacity-60 mb-6">Technical Expertise</h3>
-			<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-				<div class="flex gap-2 items-start">
-					<ArrowRight width={24} height={24} class="shrink-0 mt-1"/>
+		<Section title="Expertise" index="01">
+			<dl class="grid gap-x-10 gap-y-8 sm:grid-cols-2">
+				{expertise.map((e, i) => (
+					<div class={`border-l-2 pl-4 ${i % 2 === 0 ? "border-primary/60" : "border-accent/70"}`}>
+						<dt class="font-medium text-stone-900 dark:text-stone-100">{e.title}</dt>
+						<dd class="mt-1 text-sm leading-6 text-stone-600 dark:text-stone-400">{e.text}</dd>
+					</div>
+				))}
+			</dl>
+		</Section>
+
+		<Section title="Experience" index="02">
+			<ol class="relative space-y-10 border-l border-transparent [border-image:linear-gradient(to_bottom,var(--color-primary),var(--color-accent),transparent)_1] pl-6">
+				<li class="relative">
+					<span class="absolute -left-[29px] top-1.5 h-2.5 w-2.5 rounded-full bg-linear-to-r from-primary to-accent ring-4 ring-[#fafaf9] dark:ring-[#141414]"></span>
+					<p class="text-xs uppercase tracking-[0.2em] text-primary dark:text-accent mb-2">Now</p>
+					<p class="leading-7 text-stone-700 dark:text-stone-300">
+						Working at <Link href="https://mediamarktsaturn.com/" name="MediaMarktSaturn" />, Europe's leading consumer electronics retailer, building and operating internal platforms that keep business-critical operations running reliably at scale.
+					</p>
+				</li>
+				<li class="relative">
+					<span class="absolute -left-[29px] top-1.5 h-2.5 w-2.5 rounded-full bg-accent/60 ring-4 ring-[#fafaf9] dark:ring-[#141414]"></span>
+					<p class="text-xs uppercase tracking-[0.2em] text-stone-500 mb-2">Before</p>
+					<p class="leading-7 text-stone-700 dark:text-stone-300">
+						Built cloud-native solutions for <Link href="https://cariad.technology/" name="CARIAD" /> (Volkswagen Group) at <Link href="https://hexad.es/" name="Hexad" />. Designed event-driven architectures, implemented CI/CD pipelines, and established engineering best practices.
+					</p>
+				</li>
+				<li class="relative">
+					<span class="absolute -left-[29px] top-1.5 h-2.5 w-2.5 rounded-full bg-stone-300 dark:bg-stone-600 ring-4 ring-[#fafaf9] dark:ring-[#141414]"></span>
+					<p class="leading-7 text-stone-700 dark:text-stone-300">
+						Architected automation systems at <Link href="https://effenmark.es/" name="Effenmark" /> and optimized workflows for their energy management platform.
+					</p>
+				</li>
+			</ol>
+		</Section>
+
+		<Section title="Projects" index="03">
+			<p class="text-sm leading-6 text-stone-600 dark:text-stone-400 mb-4">
+				Personal projects I build to explore new technologies and experiment with different architectural patterns.
+			</p>
+			<ul>
+				{projects.map((p) => <Project {...p} />)}
+			</ul>
+		</Section>
+
+		<Section title="Stack" index="04">
+			<div class="space-y-6">
+				{skills.map((s) => (
 					<div>
-						<p class="text-lg font-medium text-stone-800 dark:text-stone-100">10+ Years of Experience</p>
-						<p class="text-base text-stone-600 dark:text-stone-400">Designing and building scalable backend systems across retail, automotive, and energy sectors</p>
+						<h4 class="text-sm text-stone-500 mb-3">{s.group}</h4>
+						<ul class="flex flex-wrap gap-2">
+							{s.items.map(([name, logo]) => <Skill name={name} logo={logo.src} />)}
+						</ul>
 					</div>
-				</div>
-				<div class="flex gap-2 items-start">
-					<ArrowRight width={24} height={24} class="shrink-0 mt-1"/>
-					<div>
-						<p class="text-lg font-medium text-stone-800 dark:text-stone-100">Technical Mentorship</p>
-						<p class="text-base text-stone-600 dark:text-stone-400">Guiding developers through code reviews, pair programming, and architectural decisions</p>
-					</div>
-				</div>
-				<div class="flex gap-2 items-start">
-					<ArrowRight width={24} height={24} class="shrink-0 mt-1"/>
-					<div>
-						<p class="text-lg font-medium text-stone-800 dark:text-stone-100">Distributed Systems Architect</p>
-						<p class="text-base text-stone-600 dark:text-stone-400">Microservices, event-driven architectures, and high-availability systems design</p>
-					</div>
-				</div>
-				<div class="flex gap-2 items-start">
-					<ArrowRight width={24} height={24} class="shrink-0 mt-1"/>
-					<div>
-						<p class="text-lg font-medium text-stone-800 dark:text-stone-100">Cloud & Infrastructure</p>
-						<p class="text-base text-stone-600 dark:text-stone-400">Kubernetes, CI/CD pipelines, and cloud-native architecture on GCP</p>
-					</div>
-				</div>
+				))}
 			</div>
-		</section>
-
-		<section class="mb-20">
-			<h3 class="text-stone-700 dark:text-stone-100 text-2xl opacity-60 mb-4">Now</h3>
-			<div class="flex gap-2">
-				<ArrowRight width={24} height={24} class="shrink-0 mt-1"/>
-				<p class="text-xl">Working at <Link href="https://mediamarktsaturn.com/" name="MediaMarktSaturn" />, Europe's leading consumer electronics retailer, building and operating internal platforms that keep business-critical operations running reliably at scale 💾</p>
-			</div>
-		</section>
-
-		<section class="mb-20">
-			<h3 class="text-stone-700 dark:text-stone-100 text-2xl opacity-60 mb-4">Before</h3>
-			<div class="flex gap-2 mb-4 items-start">
-				<ArrowRight width={24} height={24} class="shrink-0 mt-1"/>
-				<p class="text-xl">Built cloud-native solutions for <Link href="https://cariad.technology/" name="CARIAD" /> (Volkswagen Group) at <Link href="https://hexad.es/" name="Hexad" />. Designed event-driven architectures, implemented CI/CD pipelines, and established engineering best practices 🚘</p>
-			</div>
-			<div class="flex gap-2">
-				<ArrowRight width={24} height={24} class="shrink-0 mt-1"/>
-				<p class="text-xl">Architected automation systems at <Link href="https://effenmark.es/" name="Effenmark"/> and optimized workflows for their energy management platform 💡</p>
-			</div>
-		</section>
-
-		<section class="mb-20">
-			<h3 class="text-stone-700 dark:text-stone-100 text-2xl opacity-60 mb-6">Side Projects</h3>
-			<p class="text-base text-stone-600 dark:text-stone-400 mb-6">Personal projects I build to explore new technologies and experiment with different architectural patterns</p>
-			<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
-				<div class="space-y-1">
-					<Project href="https://prexario.dpdns.org" title="Prexario" mainTech={{src: KotlinLogo.src, alt: "Kotlin logo"}} secTech1={{src: ReactLogo.src, alt: "React logo"}} secTech2={{src: SpringLogo.src, alt: "Spring Boot logo"}} secTech3={{src: PostgresLogo.src, alt: "Postgres logo"}}/>
-					<div class="pl-4 text-xs text-stone-500 dark:text-stone-400">
-						<Link href="https://github.com/crruizb/prexario" name="View source →" />
-					</div>
-				</div>
-
-				<div class="space-y-1">
-					<Project href="https://steamcompanion.dpdns.org" title="Steam Companion" mainTech={{src: KotlinLogo.src, alt: "Kotlin logo"}} secTech1={{src: ReactLogo.src, alt: "React logo"}} secTech2={{src: SpringLogo.src, alt: "Spring Boot logo"}} secTech3={{src: PostgresLogo.src, alt: "Postgres logo"}}/>
-					<div class="pl-4 text-xs text-stone-500 dark:text-stone-400">
-						<Link href="https://github.com/crruizb/steam-companion" name="View source →" />
-					</div>
-				</div>
-
-				<div class="space-y-1">
-					<Project href="https://github.com/crruizb/hetzner-server-management" title="Hetzner SV mgmt" mainTech={{src: K8sLogo.src, alt: "Kubernetes logo"}} secTech1={{src: TFLogo.src, alt: "Terraform logo"}} />
-					<div class="pl-4 text-xs text-stone-500 dark:text-stone-400">
-						<Link href="https://github.com/crruizb/hetzner-server-management" name="View source →" />
-					</div>
-				</div>
-
-				<div class="space-y-1">
-					<Project href="https://smartnews.pages.dev" title="Smart news" mainTech={{src: JavaLogo.src, alt: "Java logo"}} secTech1={{src: ReactLogo.src, alt: "React logo"}} secTech2={{src: SpringLogo.src, alt: "Spring Boot logo"}} secTech3={{src: PostgresLogo.src, alt: "Postgres logo"}} />
-					<div class="pl-4 text-xs text-stone-500 dark:text-stone-400">
-						<Link href="https://github.com/crruizb/smartnews" name="View source →" />
-					</div>
-				</div>
-
-				<div class="space-y-1">
-					<Project href="https://esteticaderma.com/" title="Estética Derma" mainTech={{src: AstroLogo.src, alt: "Astro logo"}} secTech1={{src: ReactLogo.src, alt: "React logo"}} />
-					<div class="pl-4 text-xs text-stone-500 dark:text-stone-400">
-						<Link href="https://github.com/crruizb/estetica_derma" name="View source →" />
-					</div>
-				</div>
-			</div>
-		</section>
-
-		<section class="mb-10">
-			<h3 class="text-stone-700 dark:text-stone-100 text-2xl opacity-60 mb-6">Skills</h3>
-
-			<h4 class="mb-2 text-lg">Backend</h4>
-			<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-2 gap-y-2">
-				<Skill name="Go" logo={GoLogo.src}/>
-				<Skill name="Kotlin" logo={KotlinLogo.src}/>
-				<Skill name="Ktor" logo={KtorLogo.src}/>
-				<Skill name="Java" logo={JavaLogo.src}/>
-				<Skill name="Spring Boot" logo={SpringLogo.src}/>
-				<Skill name="Postgres" logo={PostgresLogo.src}/>
-				<Skill name="Mongo DB" logo={MongoLogo.src}/>
-				<Skill name="Redis" logo={RedisLogo.src}/>
-			</div>
-
-			<h4 class="mb-2 my-6 text-lg">Frontend</h4>
-			<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-2 gap-y-2">
-				<Skill name="HTML" logo={HTMLLogo.src}/>
-				<Skill name="CSS" logo={CSSLogo.src}/>
-				<Skill name="Javascript" logo={JSLogo.src}/>
-				<Skill name="Typescript" logo={TSLogo.src}/>
-				<Skill name="React" logo={ReactLogo.src}/>
-				<Skill name="Astro" logo={AstroLogo.src}/>
-			</div>
-
-			<h4 class="mb-2 my-6 text-lg">CI/CD</h4>
-			<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-2 gap-y-2">
-				<Skill name="Kubernetes" logo={K8sLogo.src}/>
-				<Skill name="Github Actions" logo={GHActionsLogo.src}/>
-				<Skill name="GCP" logo={GCPLogo.src}/>
-				<Skill name="Terraform" logo={TFLogo.src}/>
-			</div>
-		</section>
+		</Section>
 	</main>
 </Layout>

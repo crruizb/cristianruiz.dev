@@ -1,22 +1,59 @@
 @import "tailwindcss";
 
 @theme {
-  --default-font-family: "Roboto Mono", sans-serif;
+  --default-font-family: "Roboto Mono", ui-monospace, monospace;
   --color-primary: #206aff;
   --color-accent: #d97aff;
 }
 
 @custom-variant dark (&:where(.dark, .dark *));
 
+html {
+  background-color: #fafaf9;
+  color: #292524;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+}
+
 html.dark {
-  background-color: #222222;
-  color: #ffffff;
+  background-color: #141414;
+  color: #e7e5e4;
+}
+
+::selection {
+  background-color: color-mix(in srgb, var(--color-accent) 35%, transparent);
 }
 
 @font-face {
   font-family: "Roboto Mono";
-  src: url("/fonts/RobotoMono-VariableFont_wght.ttf") format("woff2");
-  font-weight: normal;
+  src: url("/fonts/RobotoMono-VariableFont_wght.ttf") format("truetype");
+  font-weight: 100 700;
   font-style: normal;
   font-display: swap;
+}
+
+/* Subtle staggered entrance for top-level sections */
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.reveal {
+  animation: fade-up 0.6s ease-out both;
+}
+
+.reveal:nth-child(2) { animation-delay: 80ms; }
+.reveal:nth-child(3) { animation-delay: 160ms; }
+.reveal:nth-child(4) { animation-delay: 240ms; }
+.reveal:nth-child(5) { animation-delay: 320ms; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .reveal { animation: none; }
 }
